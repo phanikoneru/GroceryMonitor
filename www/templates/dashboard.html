@@ -1,0 +1,47 @@
+<ion-view title="Grocery Monitor" class="title bar-balanced">
+<div class="button-right">
+    <button  class="button button-icon icon ion-home"></button>
+  </div>
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    
+ 
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+      <div class="bar bar-positive">
+     
+      <h1 class="title">Expired Items</h1>
+
+       <button class="button ion-eye" ng-click="gotoExpiredItems()">&nbsp;View All</button>
+    </div><br/><br/>
+
+    
+    
+    <ion-list>
+         <ion-item ng-repeat="expiredItem in expiryItems  | limitTo:5" >
+
+        {{expiredItem.title}} 
+        <span class="item-note"> {{expiredItem.shop}} - {{expiredItem.expirydate}}      </span>
+ 
+      </ion-item>
+    </ion-list>
+  
+    <div class="bar bar-positive">
+ 
+  <h1 class="title">Return Items</h1>
+
+   <button class="button ion-eye" ng-click="gotoReturnedItems()">&nbsp;View All</button>
+</div><br/><br/>
+    <ion-list>
+      <ion-item ng-repeat="returnItem in returnedItems  | limitTo:5" >
+        {{returnItem.title}}
+         <span class="item-note"> {{returnItem.shop}} - {{returnItem.returndate}}     </span>
+      </ion-item>
+    </ion-list>
+    </ion-list>
+
+   
+  </ion-content>
+   
+</ion-view>

@@ -1,0 +1,30 @@
+<ion-view title="Grocery Monitor">
+<ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+    
+   <div class="bar bar-positive">
+      <h1 class="title"> Existing Users</h1>
+       <button class="button ion-person-add" ng-click="addNewUser()">&nbsp;Add User</button>
+    </div><br/><br/>
+
+<div 
+
+    <ion-list>
+     
+      <ion-item ng-repeat="user in RelatedUsers"  >
+        
+         <div >
+        {{user.title}}  
+         <span class="item-note"> {{user.mobile}} 
+            <a  href="#/app/users/{{user.id}}"><i class="ion-edit"></i></a>&nbsp;&nbsp;
+               <a ng-click="delete(user.id)"><i class="ion-ios7-trash-outline"></i></a>
+       </span>
+  
+      </ion-item>
+    </ion-list>
+    </ion-list>
+  </ion-content>
+</ion-view>
